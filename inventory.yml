@@ -1,6 +1,26 @@
 myhosts:
   hosts:
-    my_host_01:
+   my_host_01:
+     ansible_host: localhost
+   my_host_02:
+     ansible_host: localhost
+
+leafs:
+  hosts:
+    leaf01:
       ansible_host: localhost
-    my_host_02:
+    leaf02:
       ansible_host: localhost
+
+spines:
+  hosts:
+    spine01:
+      ansible_host: localhost
+    spine02:
+      ansible_host: localhost
+
+network:
+  children:
+    leafs:
+    spines:
+    myhosts:
